@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A224CF4E2CE3DE910076938D /* bibliotecaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A224CF4D2CE3DE910076938D /* bibliotecaApp.swift */; };
-		A224CF502CE3DE910076938D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A224CF4F2CE3DE910076938D /* ContentView.swift */; };
 		A224CF522CE3DE940076938D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A224CF512CE3DE940076938D /* Assets.xcassets */; };
 		A224CF552CE3DE940076938D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A224CF542CE3DE940076938D /* Preview Assets.xcassets */; };
 		A224CF612CE3E1D80076938D /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A224CF602CE3E1D80076938D /* UserSession.swift */; };
@@ -33,7 +32,6 @@
 /* Begin PBXFileReference section */
 		A224CF4A2CE3DE910076938D /* biblioteca.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = biblioteca.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A224CF4D2CE3DE910076938D /* bibliotecaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bibliotecaApp.swift; sourceTree = "<group>"; };
-		A224CF4F2CE3DE910076938D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A224CF512CE3DE940076938D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A224CF542CE3DE940076938D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A224CF602CE3E1D80076938D /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
@@ -91,7 +89,6 @@
 				A224CF5C2CE3E19C0076938D /* Views */,
 				A224CF5B2CE3E1920076938D /* Models */,
 				A224CF4D2CE3DE910076938D /* bibliotecaApp.swift */,
-				A224CF4F2CE3DE910076938D /* ContentView.swift */,
 				A224CF512CE3DE940076938D /* Assets.xcassets */,
 				A224CF532CE3DE940076938D /* Preview Content */,
 			);
@@ -247,7 +244,6 @@
 				A224CF652CE3E1FB0076938D /* Painting.swift in Sources */,
 				A224CF6F2CE3E2470076938D /* MapView.swift in Sources */,
 				A224CF712CE3E2510076938D /* RoomView.swift in Sources */,
-				A224CF502CE3DE910076938D /* ContentView.swift in Sources */,
 				A224CF792CE3E2810076938D /* ScanQRView.swift in Sources */,
 				A224CF4E2CE3DE910076938D /* bibliotecaApp.swift in Sources */,
 				A224CF772CE3E2760076938D /* PaintingDetailView.swift in Sources */,
