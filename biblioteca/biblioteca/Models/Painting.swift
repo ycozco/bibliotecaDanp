@@ -1,8 +1,10 @@
-//
-//  Painting.swift
-//  biblioteca
-//
-//  Created by yoset on 22/08/1403 AP.
-//
-
 import Foundation
+
+struct Painting: Identifiable, Codable {
+    let id: Int
+    let title: String
+    let artist: String
+    let description: String
+    let imageUrl: String
+    let room: String
+}

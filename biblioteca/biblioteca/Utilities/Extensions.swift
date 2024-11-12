@@ -1,8 +1,10 @@
-//
-//  Extensions.swift
-//  biblioteca
-//
-//  Created by yoset on 22/08/1403 AP.
-//
+import SwiftUI
 
-import Foundation
+extension View {
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(
+            #selector(UIResponder.resignFirstResponder),
+            to: nil, from: nil, for: nil
+        )
+    }
+}
