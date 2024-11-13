@@ -8,7 +8,7 @@ struct bibliotecaApp: App {
             Group {
                 if userSession.isAuthenticated {
                     HomeView() //
-                        .environmentObject(userSession)
+                        .environmentObject(userSession)	
                 } else {
                     LoginView() //
                         .environmentObject(userSession)
