@@ -6,17 +6,18 @@ struct RoomView: View {
     
     var body: some View {
         Rectangle()
-            .fill(Color.clear)
-            .border(Color.blue, width: 2)
+            .fill(area.fillColor)
             .frame(width: area.rect.width, height: area.rect.height)
             .position(x: area.rect.midX, y: area.rect.midY)
             .onTapGesture {
-                selectedRoom = area
+                if !area.fill {
+                    selectedRoom = area
+                }
             }
             .overlay(
                 Text(area.label)
+                    .font(.caption)
                     .foregroundColor(.black)
-                    .position(x: area.rect.midX, y: area.rect.midY)
             )
     }
 }

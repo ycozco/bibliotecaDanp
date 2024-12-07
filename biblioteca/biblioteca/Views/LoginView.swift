@@ -48,7 +48,7 @@ struct LoginView: View {
                     )
                 }
                 
-                NavigationLink(destination: RegisterView()) {
+                NavigationLink(destination: RegisterView().environmentObject(userSession)) {
                     Text("Don't have an account? Register")
                         .foregroundColor(.blue)
                         .padding()

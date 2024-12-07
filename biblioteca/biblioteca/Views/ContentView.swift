@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  biblioteca
-//
-//  Created by yoset on 22/08/1403 AP.
-//
-import Foundation
 import SwiftUI
 
 struct ContentView: View {
@@ -13,6 +6,7 @@ struct ContentView: View {
     var body: some View {
         TabView {
             HomeView()
+                .environmentObject(userSession)
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
@@ -26,8 +20,9 @@ struct ContentView: View {
                 .tabItem {
                     Label("ScanQR", systemImage: "qrcode.viewfinder")
                 }
-           
-            PaintingDetailView()
+
+            // Ejemplo: roomId = 3 listará las pinturas de la sala con id = 3
+            PaintingListView(roomId: 3)
                 .tabItem {
                     Label("Painting", systemImage: "paintbrush")
                 }

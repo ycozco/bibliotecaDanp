@@ -1,11 +1,3 @@
-//
-//  HomeView.swift
-//  biblioteca
-//
-//  Created by yoset on 22/08/1403 AP.
-//
-
-import Foundation
 import SwiftUI
 
 struct HomeView: View {
@@ -17,7 +9,7 @@ struct HomeView: View {
                 Text("Welcome, \(userSession.username)!")
                     .font(.largeTitle)
                     .padding()
-               
+
                 Image("gallery_image")
                     .resizable()
                     .scaledToFit()
@@ -44,7 +36,24 @@ struct HomeView: View {
                 .padding()
             }
             .padding()
-            .navigationBarHidden(true)
+            // Aqui NO uses navigationBarHidden(true) si quieres mostrar la barra
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        // Acción para el ícono izquierdo
+                    }) {
+                        Image(systemName: "house") // Cambia el icono a tu gusto
+                    }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        // Acción para el ícono derecho
+                    }) {
+                        Image(systemName: "person.crop.circle") // Cambia el icono a tu gusto
+                    }
+                }
+            }
+            .navigationBarTitle("Home", displayMode: .inline)
         }
     }
 }

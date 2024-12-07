@@ -1,0 +1,26 @@
+[ req ]
+default_bits       = 2048
+default_keyfile    = localhost.key
+distinguished_name = req_distinguished_name
+req_extensions     = req_ext
+x509_extensions    = v3_req
+prompt             = no
+
+[ req_distinguished_name ]
+C  = PE
+ST = Arequipa
+L  = Arequipa
+O  = UNSA
+OU = Desarrollo
+CN = localhost
+
+[ req_ext ]
+subjectAltName = @alt_names
+extendedKeyUsage = serverAuth
+
+[ v3_req ]
+subjectAltName = @alt_names
+extendedKeyUsage = serverAuth
+
+[ alt_names ]
+DNS.1 = localhost

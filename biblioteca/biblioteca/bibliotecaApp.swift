@@ -2,17 +2,16 @@ import SwiftUI
 
 @main
 struct bibliotecaApp: App {
-    @StateObject private var userSession = UserSession() //
+    @StateObject var userSession = UserSession()
+    
     var body: some Scene {
         WindowGroup {
-            Group {
-                if userSession.isAuthenticated {
-                    HomeView() //
-                        .environmentObject(userSession)	
-                } else {
-                    LoginView() //
-                        .environmentObject(userSession)
-                }
+            if userSession.isAuthenticated {
+                ContentView()
+                    .environmentObject(userSession)
+            } else {
+                LoginView()
+                    .environmentObject(userSession)
             }
         }
     }

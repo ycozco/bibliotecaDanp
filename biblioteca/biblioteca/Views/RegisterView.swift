@@ -1,6 +1,9 @@
 import SwiftUI
 
 struct RegisterView: View {
+    @EnvironmentObject var userSession: UserSession
+    @Environment(\.presentationMode) var presentationMode
+    
     @State private var email: String = ""
     @State private var username: String = ""
     @State private var password: String = ""
@@ -32,7 +35,10 @@ struct RegisterView: View {
                 .cornerRadius(5.0)
             
             Button(action: {
-                // Future implementation for registration
+                // Llama a register en userSession
+                userSession.register(email: email, username: username, password: password)
+                // Luego vuelve a la pantalla anterior (LoginView)
+                presentationMode.wrappedValue.dismiss()
             }) {
                 Text("Register")
                     .foregroundColor(.white)

@@ -5,23 +5,39 @@ struct PaintingRowView: View {
     
     var body: some View {
         HStack {
-            AsyncImage(url: URL(string: painting.imageUrl)) { image in
-                image.resizable()
-            } placeholder: {
-                Color.gray
+            AsyncImage(url: URL(string: painting.image)) { phase in
+                switch phase {
+                case .success(let image):
+                    image
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 50, height: 50)
+                        .cornerRadius(8)
+                case .failure(_):
+                    Image("default") // Imagen por defecto
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 50, height: 50)
+                        .cornerRadius(8)
+                case .empty:
+                    ProgressView()
+                        .frame(width: 50, height: 50)
+                @unknown default:
+                    Image("default") // Manejo de casos futuros
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 50, height: 50)
+                        .cornerRadius(8)
+                }
             }
-            .frame(width: 60, height: 60)
-            .cornerRadius(8)
+            .padding(.trailing, 8)
             
             VStack(alignment: .leading) {
-                Text(painting.title)
+                Text(painting.painting)
                     .font(.headline)
                 Text(painting.artist)
                     .font(.subheadline)
-                    .foregroundColor(.secondary)
             }
-            Spacer()
         }
-        .padding(.vertical, 5)
     }
 }
