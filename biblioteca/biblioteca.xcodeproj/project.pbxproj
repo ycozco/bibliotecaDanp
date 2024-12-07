@@ -30,6 +30,9 @@
 		A2907E0D2D03A72300D1BCE2 /* certificate.der in Resources */ = {isa = PBXBuildFile; fileRef = A2907E0C2D03A59900D1BCE2 /* certificate.der */; };
 		A2907E0F2D03A83200D1BCE2 /* localhost_cert.cnf in Resources */ = {isa = PBXBuildFile; fileRef = A2907E0E2D03A83200D1BCE2 /* localhost_cert.cnf */; };
 		A2907E132D03EBBA00D1BCE2 /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A2907E122D03EBBA00D1BCE2 /* default.jpg */; };
+		A2907E172D03FA2500D1BCE2 /* detailView.png in Resources */ = {isa = PBXBuildFile; fileRef = A2907E142D03FA2500D1BCE2 /* detailView.png */; };
+		A2907E182D03FA2500D1BCE2 /* romView.png in Resources */ = {isa = PBXBuildFile; fileRef = A2907E152D03FA2500D1BCE2 /* romView.png */; };
+		A2907E192D03FA2500D1BCE2 /* mapView.png in Resources */ = {isa = PBXBuildFile; fileRef = A2907E162D03FA2500D1BCE2 /* mapView.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +59,9 @@
 		A2907E0C2D03A59900D1BCE2 /* certificate.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = certificate.der; sourceTree = "<group>"; };
 		A2907E0E2D03A83200D1BCE2 /* localhost_cert.cnf */ = {isa = PBXFileReference; lastKnownFileType = text; path = localhost_cert.cnf; sourceTree = "<group>"; };
 		A2907E122D03EBBA00D1BCE2 /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
+		A2907E142D03FA2500D1BCE2 /* detailView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = detailView.png; sourceTree = "<group>"; };
+		A2907E152D03FA2500D1BCE2 /* romView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = romView.png; sourceTree = "<group>"; };
+		A2907E162D03FA2500D1BCE2 /* mapView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapView.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +163,9 @@
 		A224CF5F2CE3E1B40076938D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				A2907E142D03FA2500D1BCE2 /* detailView.png */,
+				A2907E162D03FA2500D1BCE2 /* mapView.png */,
+				A2907E152D03FA2500D1BCE2 /* romView.png */,
 				A2907E122D03EBBA00D1BCE2 /* default.jpg */,
 			);
 			path = Assets;
@@ -235,11 +244,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2907E182D03FA2500D1BCE2 /* romView.png in Resources */,
 				A224CF552CE3DE940076938D /* Preview Assets.xcassets in Resources */,
+				A2907E172D03FA2500D1BCE2 /* detailView.png in Resources */,
 				A2907E0F2D03A83200D1BCE2 /* localhost_cert.cnf in Resources */,
 				A224CF522CE3DE940076938D /* Assets.xcassets in Resources */,
 				A2907E0D2D03A72300D1BCE2 /* certificate.der in Resources */,
 				A2907E132D03EBBA00D1BCE2 /* default.jpg in Resources */,
+				A2907E192D03FA2500D1BCE2 /* mapView.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
