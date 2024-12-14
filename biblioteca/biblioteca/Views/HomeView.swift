@@ -10,13 +10,13 @@ struct HomeView: View {
                     .font(.largeTitle)
                     .padding()
 
-                Image("gallery_image")
+                Image("centro_unsa")
                     .resizable()
                     .scaledToFit()
                     .frame(height: 200)
                     .padding()
                
-                Text("Explore the art gallery and discover amazing artworks.")
+                Text("Explora el arte de nuestra casa Agustina")
                     .font(.headline)
                     .multilineTextAlignment(.center)
                     .padding()

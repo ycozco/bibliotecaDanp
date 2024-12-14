@@ -1,10 +1,14 @@
 import SwiftUI
+import AVFoundation
 
 struct PaintingDetailView: View {
     let paintingId: Int
     @State private var painting: Painting?
     @State private var isLoading: Bool = true
     @State private var showError: Bool = false
+
+    @State private var audioPlayer: AVAudioPlayer?
+    @State private var isPlaying: Bool = false
 
     var body: some View {
         Group {
@@ -22,7 +26,7 @@ struct PaintingDetailView: View {
                                     .scaledToFit()
                                     .cornerRadius(12)
                             case .failure(_):
-                                Image("default") // Imagen por defecto
+                                Image("default")
                                     .resizable()
                                     .scaledToFit()
                                     .cornerRadius(12)
@@ -30,7 +34,7 @@ struct PaintingDetailView: View {
                                 ProgressView()
                                     .frame(height: 200)
                             @unknown default:
-                                Image("default") // Manejo de casos futuros
+                                Image("default")
                                     .resizable()
                                     .scaledToFit()
                                     .cornerRadius(12)
@@ -63,6 +67,24 @@ struct PaintingDetailView: View {
                             Text("Room: \(painting.room)")
                         }
                         .padding(.horizontal)
+
+                        // Controles de audio
+                        HStack(spacing: 20) {
+                            Button(action: playAudio) {
+                                Image(systemName: isPlaying ? "pause.circle.fill" : "play.circle.fill")
+                                    .resizable()
+                                    .frame(width: 50, height: 50)
+                                    .foregroundColor(.blue)
+                            }
+                            Button(action: stopAudio) {
+                                Image(systemName: "stop.circle.fill")
+                                    .resizable()
+                                    .frame(width: 50, height: 50)
+                                    .foregroundColor(.red)
+                            }
+                        }
+                        .padding(.top, 16)
+                        .frame(maxWidth: .infinity, alignment: .center)
                     }
                     .padding()
                 }
@@ -75,6 +97,7 @@ struct PaintingDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             fetchPaintingDetail()
+            setupAudio()
         }
         .alert(isPresented: $showError) {
             Alert(
@@ -99,5 +122,34 @@ struct PaintingDetailView: View {
                 isLoading = false
             }
         }
+    }
+
+    func setupAudio() {
+        guard let asset = NSDataAsset(name: "diana_and_callisto") else {
+            print("[DEBUG] Audio asset not found.")
+            return
+        }
+
+        do {
+            audioPlayer = try AVAudioPlayer(data: asset.data)
+            audioPlayer?.prepareToPlay()
+        } catch {
+            print("[DEBUG] Error initializing audio player: \(error)")
+        }
+    }
+
+    func playAudio() {
+        if isPlaying {
+            audioPlayer?.pause()
+        } else {
+            audioPlayer?.play()
+        }
+        isPlaying.toggle()
+    }
+
+    func stopAudio() {
+        audioPlayer?.stop()
+        audioPlayer?.currentTime = 0
+        isPlaying = false
     }
 }
