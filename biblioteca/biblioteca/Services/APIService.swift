@@ -3,7 +3,6 @@ import Security
 import SwiftUI
 
 // MARK: - APIError
-
 enum APIError: Error {
     case invalidURL
     case noData

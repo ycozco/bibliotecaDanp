@@ -64,7 +64,7 @@ struct PaintingListView: View {
 
     private var titleText: String {
         if let id = roomId, id > 0 {
-            return "Paintings in Room \(id)"
+            return "Paintings in gallery \(id)"
         } else {
             return "All Paintings"
         }
